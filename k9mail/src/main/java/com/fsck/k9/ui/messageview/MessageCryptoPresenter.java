@@ -80,36 +80,6 @@ public class MessageCryptoPresenter implements OnCryptoClickListener {
         messageView.getMessageHeaderView().setCryptoStatus(displayStatus);
 
         switch (displayStatus) {
-            case UNENCRYPTED_SIGN_REVOKED:
-            case ENCRYPTED_SIGN_REVOKED: {
-                showMessageCryptoWarning(messageView, account, messageViewInfo,
-                        R.string.messageview_crypto_warning_revoked);
-                break;
-            }
-            case UNENCRYPTED_SIGN_EXPIRED:
-            case ENCRYPTED_SIGN_EXPIRED: {
-                showMessageCryptoWarning(messageView, account, messageViewInfo,
-                        R.string.messageview_crypto_warning_expired);
-                break;
-            }
-            case UNENCRYPTED_SIGN_INSECURE:
-            case ENCRYPTED_SIGN_INSECURE: {
-                showMessageCryptoWarning(messageView, account, messageViewInfo,
-                        R.string.messageview_crypto_warning_insecure);
-                break;
-            }
-            case UNENCRYPTED_SIGN_ERROR:
-            case ENCRYPTED_SIGN_ERROR: {
-                showMessageCryptoWarning(messageView, account, messageViewInfo,
-                        R.string.messageview_crypto_warning_error);
-                break;
-            }
-            case ENCRYPTED_UNSIGNED: {
-                showMessageCryptoWarning(messageView, account, messageViewInfo,
-                        R.string.messageview_crypto_warning_unsigned);
-                break;
-            }
-
             case CANCELLED: {
                 Drawable providerIcon = getOpenPgpApiProviderIcon(messageView.getContext());
                 messageView.showMessageCryptoCancelledView(messageViewInfo, providerIcon);
